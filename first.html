@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+  <head>
+    <title> Первое задание </title>
+    <style type="text/css">
+      ul{
+        list-style : none;
+      }
+      .next{
+        background: url('img/next.png');
+        width: 36px;
+        height: 36px;
+      }
+      .{
+        background: url('img/pre.png');
+        width: 36px;
+        height: 36px;
+      }
+      .a{
+        margin: 0 auto;
+        width:450px;
+      }
+      a{
+        text-align: center;
+        padding-left: 20px;
+        color: #0088cc;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+<div class = "a"><a href = "first.html">Первое задание</a><a href = "four.html">Второе и кнопочка</a><a href = "two.html">Четвертое</a></div>
+     <ul id="bla"></ul>
+    <script>
+function my(str){
+  var number = ['одна','две','три','четыре','пять','шесть','семь','восемь','девять'];
+  var counter = {};
+
+  str.split('').forEach(function(item) {
+    counter[item] ? (counter[item] = counter[item] + 1) : (counter[item] = 1);
+  });
+
+  for (property in counter){
+    var li = document.createElement('li');
+    li.innerHTML = " "+ property+" - "+number[counter[property]-1]+" ";
+    document.getElementById("bla").appendChild(li);
+  }
+}
+
+var str = '123234535645671768979084523424';
+
+my(str);
+  </script>
+  </body>
